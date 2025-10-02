@@ -27,7 +27,7 @@
                             </div>
                             <div class="flex flex-col gap-[2px]">
                                 <h3 class="font-semibold">{{ $category->name }}</h3>
-                                <p class="text-sm text-ngekos-grey">1,304 Kos</p>
+                                <p class="text-sm text-ngekos-grey">{{ $category->boardingHouses->count()}} Kos</p>
                             </div>
                         </div>
                     </a>
@@ -78,7 +78,9 @@
                                         <p class="text-sm text-ngekos-grey">1 People</p>
                                     </div>
                                     <hr class="border-[#F1F2F6]">
-                                    <p class="font-semibold text-lg text-ngekos-orange">Rp{{ $boardingHouse->price }}<span
+                                    <p class="font-semibold text-lg text-ngekos-orange">
+                                        Rp{{ number_format($boardingHouse->price, 0, ',', '.') }}
+                                        <span
                                             class="text-sm text-ngekos-grey font-normal">/bulan</span></p>
                                 </div>
                             </div>
@@ -88,6 +90,7 @@
             </div>
         </div>
     </section>
+
     <section id="Cities" class="flex flex-col p-5 gap-4 bg-[#F5F6F8] mt-[30px]">
         <div class="flex items-center justify-between">
             <h2 class="font-bold">Browse Cities</h2>
@@ -110,12 +113,13 @@
                         </div>
                         <div class="flex flex-col gap-[2px]">
                             <h3 class="font-semibold">{{ $city->name }}</h3>
-                            <p class="text-sm text-ngekos-grey">1,304 Kos</p>
+                            <p class="text-sm text-ngekos-grey">{{ $city->boardingHouses->count() }} Kos</p>
                         </div>
                     </div>
                 </a>
             @endforeach
     </section>
+
     <section id="Best" class="flex flex-col gap-4 px-5 mt-[30px]">
         <div class="flex items-center justify-between">
             <h2 class="font-bold">All Great Kos</h2>
@@ -149,7 +153,7 @@
                                 <p class="text-sm text-ngekos-grey">4 People</p>
                             </div>
                             <hr class="border-[#F1F2F6]">
-                            <p class="font-semibold text-lg text-ngekos-orange">Rp{{ $boardingHouse->price }}<span
+                            <p class="font-semibold text-lg text-ngekos-orange">Rp{{ number_format($boardingHouse->price, 0, ',', '.') }}<span
                                     class="text-sm text-ngekos-grey font-normal">/bulan</span></p>
                         </div>
                     </div>

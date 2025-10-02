@@ -16,4 +16,10 @@ class EditBoardingHouse extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
+    //redirect to list after create
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }
