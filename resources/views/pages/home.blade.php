@@ -19,7 +19,7 @@
         <div class="swiper-wrapper">
             @foreach ($categories as $category)
                 <div class="swiper-slide w-fit pb-[30px]">
-                    <a href="categories.html" class="card">
+                    <a href="{{ route('category.show', $category->slug) }}" class="card">
                         <div class="flex flex-col items-center w-[120px] shrink-0 rounded-[40px] p-4 pb-5 gap-3 bg-white">
                             <div class="w-[70px] h-[70px] rounded-full flex shrink-0 overflow-hidden">
                                 <img src="{{ asset('storage/' . $category->image) }}" class="w-full h-full object-cover"
