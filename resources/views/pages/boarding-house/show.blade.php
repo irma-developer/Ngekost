@@ -108,7 +108,7 @@
                             </div>
                             <div>
                                 <p class="font-semibold">{{ $bonus->name }}</p>
-                                <p class="text-sm text-ngekos-grey">{{!! $bonus->description !!}}</p>
+                                <p class="text-sm text-ngekos-grey">{{ $bonus->description }}</p>
                             </div>
                         </div>
                     @endforeach
@@ -159,8 +159,8 @@
                     <br>
                     <span class="text-sm font-normal">/bulan</span>
                 </p>
-                <a href="room-available.html"
-                 class="flex shrink-0 rounded-full py-[14px] px-5 bg-ngekos-orange font-bold text-white">Book
+                <a href="{{ route('kos.rooms', $boardingHouse->slug) }}"
+                    class="flex shrink-0 rounded-full py-[14px] px-5 bg-ngekos-orange font-bold text-white">Book
                     Now</a>
             </div>
         </div>
