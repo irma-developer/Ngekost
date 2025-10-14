@@ -130,12 +130,13 @@
             </div>
         </div>
     </div>
-    <form action="success-booking.html" class="relative flex flex-col gap-6 mt-5 pt-5">
+    <form action="{{ route('booking.payment', $boardingHouse->slug) }}" class="relative flex flex-col gap-6 mt-5 pt-5" method="POST">
+        @csrf
         <div id="PaymentOptions" class="flex flex-col rounded-[30px] border border-[#F1F2F6] p-5 gap-4 mx-5">
             <div id="TabButton-Container" class="flex items-center justify-between border-b border-[#F1F2F6] gap-[18px]">
                 <label class="tab-link group relative flex flex-col justify-between gap-4"
                     data-target-tab="#DownPayment-Tab">
-                    <input type="radio" name="Payment" value="down"
+                    <input type="radio" name="payment_method" value="down_payment"
                         class="absolute -z-10 top-1/2 left-1/2 opacity-0" checked>
                     <div class="flex items-center gap-3 mx-auto">
                         <div class="relative w-6 h-6">
@@ -155,7 +156,7 @@
                 <div class="flex h-6 w-[1px] border border-[#F1F2F6] mb-auto"></div>
                 <label class="tab-link group relative flex flex-col justify-between gap-4"
                     data-target-tab="#FullPayment-Tab">
-                    <input type="radio" name="Payment" value="full"
+                    <input type="radio" name="payment_method" value="full_payment"
                         class="absolute -z-10 top-1/2 left-1/2 opacity-0">
                     <div class="flex items-center gap-3 mx-auto">
                         <div class="relative w-6 h-6">
